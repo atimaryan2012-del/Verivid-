@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VeriVid - AI Video Detector</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #10152b;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+    .logo {
+      font-size: 38px;
+      font-weight: bold;
+      color: #8b9cff;
+    }
+    .card {
+      background: #202847;
+      padding: 25px;
+      border-radius: 18px;
+      margin: 30px auto;
+      max-width: 420px;
+    }
+    input, button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      border: 0;
+      border-radius: 9px;
+      box-sizing: border-box;
+    }
+    button {
+      background: #687cff;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    #message {
+      color: #c4ceff;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">🛡️ VeriVid</div>
+  <h2>AI vs Real Video Detector</h2>
+  <p>Explore whether a video may be AI-generated.</p>
+
+  <div class="card">
+    <h3>Upload a video</h3>
+    <input type="file" id="video" accept="video/*">
+    <button onclick="checkVideo()">Analyse Video</button>
+    <p id="message">No video analysed yet.</p>
+  </div>
+
+  <script>
+    function checkVideo() {
+      const file = document.getElementById("video").files[0];
+      const message = document.getElementById("message");
+
+      if (!file) {
+        message.textContent = "Please select a video first.";
+        return;
+      }
+
+      message.textContent =
+        "Video selected. Genuine AI analysis is not yet available.";
+    }
+  </script>
+</body>
+</html>
